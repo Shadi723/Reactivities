@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mfi2j+WUrysN3VUP/lV/7QnPsh0itjoeBTBAwBmEECVFVomlpEWRgdVMn/A1d5P1xVJp/W72z1DiCp8wQWnNnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\shadi\\OneDrive\\سطح المكتب\\dotnetReact\\Reactivities\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shadi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\shadi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

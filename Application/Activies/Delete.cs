@@ -22,6 +22,7 @@ namespace Application.Activies
             {
                 this.context = context;
             }
+            
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {

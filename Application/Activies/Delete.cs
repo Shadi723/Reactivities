@@ -28,7 +28,7 @@ namespace Application.Activies
             {
                 Activity activity = await context.Activities.FindAsync(request.Id);
                 if (activity == null) throw new Exception("Element does not exist");
-                context.Activities.Remove(activity);
+                context.Remove(activity);
                 /// command goes here
                 var success = await context.SaveChangesAsync() > 0;
                 if (success) return Unit.Value;

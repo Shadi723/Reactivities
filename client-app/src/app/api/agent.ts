@@ -1,9 +1,9 @@
-import { IActivity } from "./../models/activity";
 import axios, { AxiosResponse } from "axios";
+import { IActivity } from "../models/activity";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://localhost:5000/";
 
-const responseBody = (respnse: AxiosResponse) => respnse.data;
+const responseBody = (response: AxiosResponse) => response.data;
 
 const sleep = (ms: number) => (response: AxiosResponse) =>
   new Promise<AxiosResponse>((resolve) =>
@@ -20,12 +20,12 @@ const requests = {
 };
 
 const Activities = {
-  list: (): Promise<IActivity[]> => requests.get("/Activities"),
-  details: (id: string) => requests.get(`/Activities/${id}`),
-  create: (activity: IActivity) => requests.post("/Activities", activity),
+  list: (): Promise<IActivity[]> => requests.get("/activities"),
+  details: (id: string) => requests.get(`/activities/${id}`),
+  create: (activity: IActivity) => requests.post("/activities", activity),
   update: (activity: IActivity) =>
-    requests.put(`/Activities/${activity.id}`, activity),
-  delete: (id: string) => requests.del(`/Activities/${id}`),
+    requests.put(`/activities/${activity.id}`, activity),
+  delete: (id: string) => requests.del(`/activities/${id}`),
 };
 
 export default {

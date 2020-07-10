@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Activies;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,7 +45,12 @@ namespace API
 
             });
             services.AddControllers();
+
             services.AddMediatR(typeof(List.Handler).Assembly);
+            services.AddMvc()
+               .AddFluentValidation(
+                   cfg => cfg.RegisterValidatorsFromAssemblyContaining<Create>())
+               .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

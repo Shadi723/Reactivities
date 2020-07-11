@@ -1,7 +1,30 @@
 import axios, { AxiosResponse } from "axios";
+import { stat } from "fs";
+import { toast } from "react-toastify";
+import { history } from "../..";
 import { IActivity } from "../models/activity";
 
 axios.defaults.baseURL = "http://localhost:5000/";
+
+axios.interceptors.response.use(undefined, (error) => {
+  const { status, data, config } = error.response;
+  if (status == 404) {
+    history.push("/not found");
+  }
+  if (
+    status == 400 &&
+    config.method === "get" &&
+    data.errors.hasOwnProperty("id")
+  ) {
+    history.push("/not found");
+  }
+  if (status == 500) {
+    toast.error("Server Error");
+  }
+  if (error.message === "Network Error" && !error.response) {
+    toast.error("Server down");
+  }
+});
 
 const responseBody = (response: AxiosResponse) => response.data;
 

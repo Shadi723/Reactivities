@@ -1,6 +1,8 @@
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Errors;
 using Domain;
 using MediatR;
 using Presistance;
@@ -22,12 +24,13 @@ namespace Application.Activies
             {
                 this.context = context;
             }
-            
+
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 Activity activity = await context.Activities.FindAsync(request.Id);
-                if (activity == null) throw new Exception("Element does not exist");
+                if (activity == null)
+                    throw new RestException(HttpStatusCode.NotFound, new { activity = "Not Found" });
                 context.Remove(activity);
                 /// command goes here
                 var success = await context.SaveChangesAsync() > 0;

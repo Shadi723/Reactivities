@@ -23,7 +23,7 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
     loadActivity(match.params.id).catch(() => {
       history.push('/not found');
     });
-  }, [loadActivity, match.params.id]);
+  }, [loadActivity, match.params.id, history]);
 
   if (loadingInitial)
     return <LoadingComponent content='Loading activity...' />;

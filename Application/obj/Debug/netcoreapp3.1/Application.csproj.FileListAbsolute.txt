@@ -1,0 +1,14 @@
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Application.deps.json
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Application.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Application.pdb
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Presistance.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\bin\Debug\netcoreapp3.1\Presistance.pdb
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.csprojAssemblyReference.cache
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfoInputs.cache
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfo.cs
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Application\obj\Debug\netcoreapp3.1\Application.pdb

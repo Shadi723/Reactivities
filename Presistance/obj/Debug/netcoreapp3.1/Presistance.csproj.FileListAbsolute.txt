@@ -1,0 +1,15 @@
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Presistance.deps.json
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Presistance.runtimeconfig.json
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Presistance.runtimeconfig.dev.json
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Presistance.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Presistance.pdb
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.csprojAssemblyReference.cache
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.AssemblyInfoInputs.cache
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.AssemblyInfo.cs
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.csproj.CoreCompileInputs.cache
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.csproj.CopyComplete
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.dll
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.pdb
+C:\Users\shadi\OneDrive\سطح المكتب\dotnetReact\Reactivities\Presistance\obj\Debug\netcoreapp3.1\Presistance.genruntimeconfig.cache

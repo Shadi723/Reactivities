@@ -4,7 +4,7 @@ import { FormFieldProps, Form, Label } from 'semantic-ui-react';
 import {DateTimePicker} from 'react-widgets';
 
 interface IProps
-  extends FieldRenderProps<Date, HTMLInputElement>,
+  extends FieldRenderProps<Date, any>,
     FormFieldProps {}
 
 const DateInput: React.FC<IProps> = ({
@@ -26,7 +26,6 @@ const DateInput: React.FC<IProps> = ({
             onKeyDown={(e) => e.preventDefault()}
             date={date}
             time={time}
-            {...rest}
         />
         {touched && error && (
           <Label basic color='red'>

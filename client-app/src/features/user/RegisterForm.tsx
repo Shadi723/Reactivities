@@ -1,71 +1,71 @@
-import { FORM_ERROR } from "final-form";
-import React, { useContext } from "react";
-import { Form as FinalForm, Field } from "react-final-form";
-import { combineValidators, isRequired } from "revalidate";
-import { Button, Form, Header, Label } from "semantic-ui-react";
-import ErrorMessage from "../../app/common/form/ErrorMessage";
-import TextInput from "../../app/common/form/TextInput";
-import { IUserFromValues } from "../../app/models/user";
-import { RootStoreContext } from "../../app/stores/rootStore";
+import React, { useContext } from 'react';
+import { Form as FinalForm, Field } from 'react-final-form';
+import { Form, Button, Header } from 'semantic-ui-react';
+import TextInput from '../../app/common/form/TextInput';
+import { RootStoreContext } from '../../app/stores/rootStore';
+import { IUserFormValues } from '../../app/models/user';
+import { FORM_ERROR } from 'final-form';
+import { combineValidators, isRequired } from 'revalidate';
+import ErrorMessage from '../../app/common/form/ErrorMessage';
 
 const validate = combineValidators({
-  email: isRequired("email"),
-  password: isRequired("password"),
-  userName: isRequired("userName"),
-  displayName: isRequired("displayName"),
+  username: isRequired('Username'),
+  displayName: isRequired('DisplayName'),
+  email: isRequired('Email'),
+  password: isRequired('Password')
 });
+
 const RegisterForm = () => {
   const rootStore = useContext(RootStoreContext);
   const { register } = rootStore.userStore;
   return (
     <FinalForm
+      onSubmit={(values: IUserFormValues) =>
+        register(values).catch(error => ({
+          [FORM_ERROR]: error
+        }))
+      }
       validate={validate}
-      onSubmit={(values: IUserFromValues) => {
-        console.log("hi");
-        register(values).catch((error) => ({
-          [FORM_ERROR]: error,
-        }));
-      }}
       render={({
         handleSubmit,
         submitting,
-        form,
         submitError,
         invalid,
         pristine,
-        dirtySinceLastSubmit,
+        dirtySinceLastSubmit
       }) => (
         <Form onSubmit={handleSubmit} error>
           <Header
-            as="h2"
-            content="Sign up to activities"
-            color="teal"
-            textAlign="center"
+            as='h2'
+            content='Sign up to Reactivities'
+            color='teal'
+            textAlign='center'
           />
+          <Field name='username' component={TextInput} placeholder='Username' />
           <Field
-            name="username"
+            name='displayName'
             component={TextInput}
-            placeholder="User Name"
+            placeholder='Display Name'
           />
+          <Field name='email' component={TextInput} placeholder='Email' />
           <Field
-            name="displayName"
+            name='password'
             component={TextInput}
-            placeholder="Display Name"
-          />
-          <Field name="email" component={TextInput} placeholder="Email" />
-          <Field
-            name="password"
-            component={TextInput}
-            placeholder="Password"
-            type="password"
+            placeholder='Password'
+            type='password'
           />
           {submitError && !dirtySinceLastSubmit && (
             <ErrorMessage
               error={submitError}
-              text={JSON.stringify(submitError.data.errors)}
             />
           )}
-          <Button loading={submitting} color="teal" content="Register" fluid />
+          <Button
+            disabled={(invalid && !dirtySinceLastSubmit) || pristine}
+            loading={submitting}
+            color='teal'
+            content='Register'
+            fluid
+          />
         </Form>
       )}
     />

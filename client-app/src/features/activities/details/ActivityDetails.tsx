@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { Grid } from 'semantic-ui-react';
-import ActivityStore from '../../../app/stores/activityStore';
 import { observer } from 'mobx-react-lite';
 import { RouteComponentProps } from 'react-router';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
@@ -15,23 +14,19 @@ interface DetailParams {
 }
 
 const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
-  match, history
+  match,
+  history
 }) => {
   const rootStore = useContext(RootStoreContext);
-
   const { activity, loadActivity, loadingInitial } = rootStore.activityStore;
 
   useEffect(() => {
-    loadActivity(match.params.id).catch(() => {
-      history.push('/not found');
-    });
+    loadActivity(match.params.id);
   }, [loadActivity, match.params.id, history]);
 
-  if (loadingInitial)
-    return <LoadingComponent content='Loading activity...' />;
-  
-  if (!activity)
-    return <h2>Not Found</h2>
+  if (loadingInitial) return <LoadingComponent content='Loading activity...' />;
+
+  if (!activity) return <h2>Activity not found</h2>;
 
   return (
     <Grid>

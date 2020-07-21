@@ -1,15 +1,15 @@
-import { IUser, IUserFromValues } from "./../models/user";
 import axios, { AxiosResponse } from "axios";
-import { toast } from "react-toastify";
-import { history } from "../..";
 import { IActivity } from "../models/activity";
+import { history } from "../..";
+import { toast } from "react-toastify";
+import { IUser, IUserFormValues } from "../models/user";
 
 axios.defaults.baseURL = "http://localhost:5000";
 
 axios.interceptors.request.use(
   (config) => {
     const token = window.localStorage.getItem("jwt");
-    if (token) config.headers.Autherization = `Bearer ${token}`;
+    if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
   },
   (error) => {
@@ -18,22 +18,22 @@ axios.interceptors.request.use(
 );
 
 axios.interceptors.response.use(undefined, (error) => {
+  if (error.message === "Network Error" && !error.response) {
+    toast.error("Network error - make sure API is running!");
+  }
   const { status, data, config } = error.response;
   if (status === 404) {
-    history.push("/not found");
+    history.push("/notfound");
   }
   if (
     status === 400 &&
     config.method === "get" &&
     data.errors.hasOwnProperty("id")
   ) {
-    history.push("/not found");
+    history.push("/notfound");
   }
   if (status === 500) {
-    toast.error("Server Error");
-  }
-  if (error.message === "Network Error" && !error.response) {
-    toast.error("Server down");
+    toast.error("Server error - check the terminal for more info!");
   }
   throw error.response;
 });
@@ -65,10 +65,10 @@ const Activities = {
 
 const User = {
   current: (): Promise<IUser> => requests.get("/user"),
-  login: (user: IUserFromValues): Promise<IUser> =>
-    requests.post("/user/login", user),
-  register: (user: IUserFromValues): Promise<IUser> =>
-    requests.post("/user/register", user),
+  login: (user: IUserFormValues): Promise<IUser> =>
+    requests.post(`/user/login`, user),
+  register: (user: IUserFormValues): Promise<IUser> =>
+    requests.post(`/user/register`, user),
 };
 
 export default {
